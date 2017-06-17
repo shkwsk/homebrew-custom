@@ -2,7 +2,7 @@
 
 ## Install
 
-brew tap skawasak/homebrew-custom
+brew tap shkwsk/homebrew-custom
 brew install tmux-patched
 
 ## Thanks
