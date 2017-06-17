@@ -12,7 +12,7 @@ class TmuxPatched < Formula
       # This fixes the Tmux 2.1 update that broke the ability to use select-pane [-LDUR]
       # to switch panes when in a maximized pane https://github.com/tmux/tmux/issues/150#issuecomment-149466158
       url "https://github.com/tmux/tmux/commit/a05c27a7e1c4d43709817d6746a510f16c960b4b.diff"
-      sha256 "2a60a63f0477f2e3056d9f76207d4ed905de8a9ce0645de6c29cf3f445bace12"
+      sha256 "cd1f1035ac75451bff8ba1f1e5f79ae9f7677513a77bce538e83dd6b5407f630"
     end
   end
 
