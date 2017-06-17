@@ -1,15 +1,19 @@
 require 'formula'
 
 class TmuxPatched < Formula
-  homepage 'http://tmux.sourceforge.net'
-  url 'https://downloads.sourceforge.net/project/tmux/tmux/tmux-1.9/tmux-1.9a.tar.gz'
-  sha256 '815264268e63c6c85fe8784e06a840883fcfc6a2'
+  desc "Terminal multiplexer"
+  homepage "https://tmux.github.io/"
 
-  bottle do
-    cellar :any
-    sha256 "258df085ed5fd3ff4374337294641bd057b81ff4" => :mavericks
-    sha256 "3838e790a791d44464df6e7fcd25d8558d864d9c" => :mountain_lion
-    sha256 "4368a7f81267c047050758338eb8f4207da12224" => :lion
+  stable do
+    url "https://github.com/tmux/tmux/releases/download/2.1/tmux-2.1.tar.gz"
+    sha256 "31564e7bf4bcef2defb3cb34b9e596bd43a3937cad9e5438701a81a5a9af6176"
+
+    patch do
+      # This fixes the Tmux 2.1 update that broke the ability to use select-pane [-LDUR]
+      # to switch panes when in a maximized pane https://github.com/tmux/tmux/issues/150#issuecomment-149466158
+      url "https://github.com/tmux/tmux/commit/a05c27a7e1c4d43709817d6746a510f16c960b4b.diff"
+      sha256 "2a60a63f0477f2e3056d9f76207d4ed905de8a9ce0645de6c29cf3f445bace12"
+    end
   end
 
   head do
